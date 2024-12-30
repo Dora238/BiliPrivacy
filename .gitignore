@@ -1,0 +1,65 @@
+# Python
+data
+data/
+
+src/utils_copy.py
+src/volcengine-python-sdk-1.0.108
+src/volcengine-python-sdk-1.0.108/*
+
+test*
+
+*.png
+
+run/
+run/*
+
+test.ipynb
+
+
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+*.svg
+clip_value.py
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project specific
+data/raw_data/
+data/processed_data/
+results/
+*.log
+credentials.py
+.env
+
+# OS specific
+.DS_Store
+Thumbs.db
