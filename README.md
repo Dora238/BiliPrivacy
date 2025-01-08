@@ -38,7 +38,7 @@
 
 0. **DEMO**
 
-![Sample Video](https://github.com/Dora238/BiliPrivacy/example_demo/demo.mp4)
+![Sample Video](https://github.com/user-attachments/assets/38a83003-af45-49df-b662-aacddba59861)
 
 1. **环境配置**
 
