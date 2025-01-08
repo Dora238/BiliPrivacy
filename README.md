@@ -1,6 +1,7 @@
 # BiliPrivacy
 
-基于哔哩哔哩平台的用户评论数据集构建与大模型隐私推理能力评估项目。
+面向隐私保护的用户评论基准数据集构建与大模型推理能力评估
+
 
 ## 主要功能
 
@@ -91,14 +92,14 @@ python src/task_main.py --task task3_fans_profiling --model ERNIE-3.5-128K --def
 
 ```
 BiliPrivacy/ 
-├── configs/ # 配置文件和API凭证 
-├── data/ # 原始数据存储 
-├── results/ # 评估结果输出 
-├── src/ # 源代码 
-│ ├── task_main.py # 主程序入口 
-│ ├── dp_processing_fastText.py # 差分隐私处理 
-│ └── utils/ # 工具函数 
-└── task_prompts/ # 任务提示模板
+├── configs/ # 配置文件和API凭证   
+├── data/ # 原始数据存储  
+├── results/ # 评估结果输出   
+├── src/ # 源代码  
+│ ├── task_main.py # 主程序入口  
+│ ├── dp_processing_fastText.py # 差分隐私处理  
+│ └── utils/ # 工具函数  
+└── task_prompts/ # 任务提示模板  
 ```
 
 ## 实验结果
@@ -112,7 +113,7 @@ BiliPrivacy/
 ## 重要说明
 
 1. **数据获取**
-   - 数据集获取请联系：dumengyao@nudt.edu.cn
+   - 数据集获取请联系，邮件时请备注用途：dumengyao@nudt.edu.cn
 
 2. **模型支持**
    - ⚠️ Qianfan-Chinese-Llama-2-13B 模型已停止维护，请使用其他支持的模型
