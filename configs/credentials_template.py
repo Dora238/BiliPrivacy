@@ -1,30 +1,17 @@
-# API Credentials Template
-# Copy this file to credentials.py and fill in your actual credentials
+from openai import OpenAI
+openai_org = ""
+openai_api_key = ""
+azure_endpoint = ""
+azure_key = ""
+azure_api_version = ""
+azure_language_endpoint = ""
+azure_language_key = ""
 
-# Bilibili API
-BILIBILI_ACCESS_KEY = "your_access_key_here"
-BILIBILI_SECRET_KEY = "your_secret_key_here"
+MODEL_ENTERY_POIONT = ""
+DOUBAO_ARK_API_KEY = ""
 
-# Model Configuration
-MODEL_CONFIG = {
-    "batch_size": 32,
-    "learning_rate": 0.001,
-    "epochs": 100,
-    "device": "cuda"  # or "cpu"
-}
+QIANFAN_ACCESS_KEY = ""
+QIANFAN_SECRET_KEY = ""
 
-# Data Paths
-DATA_PATHS = {
-    "raw_data": "../data/raw_data",
-    "processed_data": "../data/processed_data",
-    "results": "../results"
-}
-
-# Privacy Settings
-PRIVACY_CONFIG = {
-    "epsilon": 1.0,  # 差分隐私参数
-    "delta": 1e-5,
-    "clip_threshold": 1.0
-}
-
-# DO NOT COMMIT credentials.py TO VERSION CONTROL
+AIGC_API = ""
+AIGC_URL =""
