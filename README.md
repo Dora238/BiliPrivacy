@@ -36,7 +36,7 @@
 
 1. **环境配置**
 ```bash
-git clone [your-repo-url]
+git clone https://github.com/Dora238/BiliPrivacy.git
 cd BiliPrivacy
 pip install -r requirements.txt
 ```
@@ -53,9 +53,6 @@ cp configs/credentials_template.py configs/credentials.py
 ```bash
 python src/task_main.py --task [task_type] --model [model_name] --defense [defense_type] --epsilon [epsilon_value] --temp [temperature]
 
-第二部分（防御策略和参数）：
-```markdown
-
 #### 任务类型 (--task_type)
 - 'task1_pii_detection': 个体身份信息推理任务
 - 'task2_user_profiling': 用户画像推理任务
@@ -68,8 +65,7 @@ python src/task_main.py --task [task_type] --model [model_name] --defense [defen
 
 #### 差分隐私参数 (--epsilon)
 - 仅当 defense=2 时需要设置
-- 取值范围：[100-1000]
-- 默认值：400
+- 取值范围：[400，800，1200]
 - 说明：值越大，隐私保护程度越低，但数据效用越高
 
 #### 温度参数 (--temp)
@@ -94,17 +90,15 @@ python src/task_main.py --task task3_fans_profiling --model ERNIE-3.5-128K --def
 ## 项目结构
 
 ```
-BiliPrivacy/
-├── configs/           # 配置文件和API凭证
-├── data/             # 原始数据存储
-├── data_normal_people/ # 处理后的用户数据
-├── results/          # 评估结果输出
-├── src/             # 源代码
-│   ├── task_main.py # 主程序入口
-│   ├── dp_processing.py # 差分隐私处理
-│   └── utils/      # 工具函数
-├── example_notebooks/ # 示例笔记本
-└── task_prompts/    # 任务提示模板
+BiliPrivacy/ 
+├── configs/ # 配置文件和API凭证 
+├── data/ # 原始数据存储 
+├── results/ # 评估结果输出 
+├── src/ # 源代码 
+│ ├── task_main.py # 主程序入口 
+│ ├── dp_processing_fastText.py # 差分隐私处理 
+│ └── utils/ # 工具函数 
+└── task_prompts/ # 任务提示模板
 ```
 
 ## 实验结果
