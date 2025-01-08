@@ -87,10 +87,11 @@ python src/task_main.py --task task2_user_profiling --model claude-3-5-sonnet-20
 # 示例3：使用文心一言运行带匿名化的粉丝画像推理任务
 python src/task_main.py --task task3_fans_profiling --model ERNIE-3.5-128K --defense 1 --temp 0.8
 
+'''
 
 ## 项目结构
 
-```
+'''bash
 BiliPrivacy/ 
 ├── configs/ # 配置文件和API凭证   
 ├── data/ # 原始数据存储  
