@@ -6,6 +6,8 @@ src/utils_copy.py
 src/volcengine-python-sdk-1.0.108
 src/volcengine-python-sdk-1.0.108/*
 
+src/dp_processing.py
+
 test*
 
 *.png
@@ -55,7 +57,6 @@ clip_value.py
 # Project specific
 data/raw_data/
 data/processed_data/
-results/
 *.log
 credentials.py
 .env
