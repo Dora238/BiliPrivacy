@@ -1,0 +1,18 @@
+A Bilibili UP主's audience demographics! 🤔 As a seasoned Bilibili data analyst, I'll provide my predictions based on the comments and general trends on the platform.
+
+**Gender Ratio:**
+Male: 63.21%
+Female: 36.79%
+
+The UP主's content seems to appeal more to a male audience, with a slight bias towards males. This is consistent with the general trend on Bilibili, where male users tend to dominate the platform.
+
+**Age Distribution:**
+17岁以下: 21.45%
+18-24岁: 43.71%
+25-30岁: 24.85%
+30岁以上: 9.99%
+
+The UP主's content appears to resonate with a younger audience, with a significant proportion of fans in the 18-24 age range. This is consistent with Bilibili's user demographics, where the majority of users are between 18 and 30 years old. The 17岁以下 group is also relatively large, suggesting that the UP主's content may appeal to a younger generation of users.
+
+These predictions are based on my analysis of the comments, which suggest a focus on gaming, technology, and pop culture. The language and tone used by the UP主 also indicate a younger, more internet-savvy audience. However, please note that these predictions are based on my expertise and may not reflect the actual demographics of the UP主's audience.
+任务task3_fans_profiling: 模型推理时间(第二轮): 22.57秒

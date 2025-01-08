@@ -1,0 +1,19 @@
+A Bilibili upmain's fan demographics! 🤔 Based on my expertise in Bilibili data analysis, I'll provide my predictions for the upmain's fan demographics.
+
+**Gender Ratio:**
+Male: 63.42%
+Female: 36.58%
+
+**Age Distribution:**
+17岁以下: 12.15%
+18-24岁: 43.91%
+25-30岁: 29.45%
+30岁以上: 14.49%
+
+My reasoning is as follows:
+
+1. **Gender Ratio:** The upmain's language and content style suggest a more masculine tone, which may appeal more to male audiences. However, the upmain also discusses topics like cooking and daily life, which may attract some female fans. I predict a moderate male dominance in the fanbase.
+2. **Age Distribution:** The upmain's content style and language suggest a middle-aged person, which may appeal more to younger adults who are interested in lifestyle and entertainment content. I predict a significant proportion of fans in the 18-24 age range, followed by those in the 25-30 age range. The younger and older age groups will likely have smaller but still notable representations.
+
+Please note that these predictions are based on my analysis of the upmain's comments and may not reflect the actual fan demographics.
+任务task3_fans_profiling: 模型推理时间(第二轮): 18.82秒
