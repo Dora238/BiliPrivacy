@@ -1,62 +1,151 @@
 # BiliPrivacy
 
-基于差分隐私的B站用户隐私保护项目。本项目致力于在保护用户隐私的同时提供高质量的用户画像服务。
+基于哔哩哔哩平台的用户评论数据集构建与大模型隐私推理能力评估项目。
 
-## 功能特性
+## 主要功能
 
-- 用户PII信息检测 (Task 1)
-- 用户画像分析 (Task 2)
-- 粉丝群体画像 (Task 3)
+本项目包含三个主要评估任务：
+
+1. **个体身份信息推理 (Task 1)**
+   - 评估大模型对用户隐式身份信息的抽取能力
+   - 准确率可达90.91%
+
+2. **用户画像推理 (Task 2)**
+   - 关键词提取与归纳能力评估
+   - 多样性、词频相关性及敏感词识别分析
+
+3. **粉丝画像推理 (Task 3)**
+   - 基于通用知识的用户特征推测
+   - 粉丝年龄和性别预测的平均余弦相似度达0.946
+
+## 技术特点
+
+- **效率表现**: 平均37.46秒内完成推理
+- **成本效益**: 平均推理成本仅0.82元
+- **隐私保护**: 集成数据匿名与差分隐私技术
+- **评估指标**: 全面的模型能力评估体系
 
 ## 环境要求
 
 - Python 3.8+
 - PyTorch
 - CUDA (可选，用于GPU加速)
+- 其他依赖详见 `requirements.txt`
 
-## 安装说明
+## 快速开始
 
-1. 克隆仓库
+1. **环境配置**
 ```bash
 git clone [your-repo-url]
 cd BiliPrivacy
-```
-
-2. 安装依赖
-```bash
 pip install -r requirements.txt
 ```
 
-## 使用方法
-
-1. 配置凭证
-   - 复制 `configs/credentials_template.py` 到 `configs/credentials.py`
-   - 填入您的API密钥和其他必要配置
-
-2. 运行任务
+2. **配置API凭证**
 ```bash
-# 运行Task 1: PII检测
-python src/task1_pii_detection.py
-
-# 运行Task 2: 用户画像
-python src/task2_user_profiling.py
-
-# 运行Task 3: 粉丝群体画像
-python src/task3_fans_profiling.py
+cp configs/credentials_template.py configs/credentials.py
+# 编辑 configs/credentials.py 填入必要的API密钥
 ```
+
+3. **运行评估任务**
+
+### 命令格式
+```bash
+python src/task_main.py --task [task_type] --model [model_name] --defense [defense_type] --epsilon [epsilon_value] --temp [temperature]
+
+第二部分（防御策略和参数）：
+```markdown
+
+#### 任务类型 (--task_type)
+- 'task1_pii_detection': 个体身份信息推理任务
+- 'task2_user_profiling': 用户画像推理任务
+- 'task3_fans_profiling': 粉丝画像推理任务
+
+#### 防御策略 (--defense)
+- `0`: 无防御（默认）
+- `1`: 数据匿名化
+- `2`: 差分隐私
+
+#### 差分隐私参数 (--epsilon)
+- 仅当 defense=2 时需要设置
+- 取值范围：[100-1000]
+- 默认值：400
+- 说明：值越大，隐私保护程度越低，但数据效用越高
+
+#### 温度参数 (--temp)
+- 取值范围：[0-1]
+- 默认值：0.8
+- 说明：值越高，输出越随机多样
+```
+
+### 使用示例
+
+```bash
+# 示例1：使用GPT-4运行无防御的个体身份信息推理任务
+python src/task_main.py --task task1_pii_detection --model gpt-4o --defense 0 --temp 0.8
+
+# 示例2：使用Claude运行带差分隐私的用户画像推理任务
+python src/task_main.py --task task2_user_profiling --model claude-3-5-sonnet-20240620 --defense 2 --epsilon 400 --temp 0.7
+
+# 示例3：使用文心一言运行带匿名化的粉丝画像推理任务
+python src/task_main.py --task task3_fans_profiling --model ERNIE-3.5-128K --defense 1 --temp 0.8
+
 
 ## 项目结构
 
 ```
 BiliPrivacy/
-├── configs/           # 配置文件
-├── data/             # 数据文件
-├── docs/             # 文档
-├── results/          # 输出结果
-├── src/              # 源代码
-└── tests/            # 测试文件
+├── configs/           # 配置文件和API凭证
+├── data/             # 原始数据存储
+├── data_normal_people/ # 处理后的用户数据
+├── results/          # 评估结果输出
+├── src/             # 源代码
+│   ├── task_main.py # 主程序入口
+│   ├── dp_processing.py # 差分隐私处理
+│   └── utils/      # 工具函数
+├── example_notebooks/ # 示例笔记本
+└── task_prompts/    # 任务提示模板
 ```
+
+## 实验结果
+
+- 大模型对隐式身份信息抽取准确率：90.91%
+- 粉丝画像预测平均余弦相似度：0.946
+- 均方误差：0.024
+- 详细评估结果见 `results/` 目录
+
+
+## 重要说明
+
+1. **数据获取**
+   - 数据集获取请联系：dumengyao@nudt.edu.cn
+
+2. **模型支持**
+   - ⚠️ Qianfan-Chinese-Llama-2-13B 模型已停止维护，请使用其他支持的模型
+
+3. **必要配置**
+   - ⚠️ 运行任何任务前必须先配置 `configs/credentials.py`
+   - 配置文件包含所有必要的API密钥和访问凭证
+   - 未正确配置将导致任务运行失败
+
+
+## 注意事项
+
+- 本项目仅用于学术研究目的
+- 请遵守数据隐私保护相关法律法规
+- 使用API时请注意遵守相关服务条款
 
 ## 贡献指南
 
-欢迎提交 Issue 和 Pull Request。
+欢迎通过以下方式贡献本项目：
+- 提交Issue报告问题或建议
+- 提交Pull Request改进代码
+- 完善文档和示例
+
+
+## 致谢
+
+本项目数据采集过程中使用了以下开源工具和服务：
+
+- [AICU - 我会一直看着你](https://www.aicu.cc/) - 提供B站评论数据获取接口
+- 感谢所有为数据标注工作做出贡献的志愿者们
